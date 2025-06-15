@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spotify AI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <h1 class="logo">Sound<span>Aura</span></h1>
+    <nav>
+      <ul>
+        <li onclick="showSection('home')">Home</li>
+        <li onclick="showSection('playlist')">Playlist</li>
+        <li onclick="showSection('profile')">Profile</li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section id="home" class="section active fade-in">
+      <h2>Sonic Mind</h2>
+      <div class="songs" id="homeSongs"></div>
+    </section>
+
+    <!-- PLAYLIST -->
+    <section id="playlist" class="section fade-in">
+      <h2>My Playlist</h2>
+      <div class="songs" id="playlistSongs"></div>
+    </section>
+
+    <!-- PROFILE -->
+  <div id="profile" class="section">
+  <div id="profileCard">
+    <img id="profilePic" src="https://i.pravatar.cc/300?img=15" alt="Profile Picture">
+    <h2>Sarath</h2>
+    <p>Music Lover 🎧 | Beats Explorer</p>
+    <p>Favorites: <span id="favCount">0</span> songs</p>
+  </div>
+</div>
+
+  <div id="playerBar">
+    <span id="currentTrack">🎵 No song playing</span>
+    <audio id="audioPlayer" controls></audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

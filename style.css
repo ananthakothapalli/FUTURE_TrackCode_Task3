@@ -1,0 +1,137 @@
+body {
+  background: linear-gradient(to bottom right, #121212, #1DB954);
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding-bottom: 100px;
+}
+.navbar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.2rem 2rem;
+  background: rgba(0, 0, 0, 0.5);
+  position: sticky; top: 0; z-index: 1000;
+}
+.logo { font-size: 1.8rem; font-weight: bold; }
+.logo span { color: #1DB954; }
+nav ul { display: flex; gap: 1.5rem; list-style: none; }
+nav ul li {
+  cursor: pointer;
+  transition: 0.3s;
+}
+nav ul li:hover { color: #1DB954; }
+
+.section {
+  display: none;
+  padding: 4rem 2rem;
+  text-align: center;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+.section.active {
+  display: block;
+  opacity: 1;
+}
+.songs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+.song-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 1rem;
+  text-align: center;
+  transition: transform 0.3s;
+}
+.song-card:hover { transform: scale(1.05); }
+.song-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+}
+.song-card button {
+  margin: 0.4rem 0.2rem;
+  padding: 0.4rem 1rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.favorited {
+  background: #ff3366;
+  color: white;
+}
+button:not(.favorited) {
+  background: #1DB954;
+  color: white;
+}
+
+.profile-card {
+  max-width: 400px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(6px);
+  text-align: center;
+}
+.profile-card img {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  border: 3px solid #1DB954;
+}
+#playerBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #000;
+  color: white;
+  padding: 0.8rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+.section#profile {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.section#profile.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Profile card styling */
+#profileCard {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 30px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#profileCard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Profile picture */
+#profilePic {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 3px solid #00ffcc;
+  box-shadow: 0 0 20px #00ffcc88;
+  transition: transform 0.4s ease;
+}
+#profilePic:hover {
+  transform: rotate(3deg) scale(1.02);
+}
